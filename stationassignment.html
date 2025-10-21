@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <title>Station Counter</title>
+  <style>
+    body {
+      font-family: 'palatino linotype', sans-serif;
+      background-image: url("C:\\Users\\sajee\\Downloads\\pix.gif.gif");
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fffbfb;
+    }
+    .outer {
+      background: rgba(23, 31, 71, 0.55);
+      border-radius: 15px;
+      padding: 40px 50px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 50px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .buttons {
+      margin: 20px 0;
+    }
+    button {
+      font-size: 18px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      margin: 0 8px;
+      cursor: grab;
+      font-weight: bold;
+      color: white;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #incrementbutton {
+      background-color: #4d77a8; 
+    }
+    #savebutton {
+      background-color: #856fb7; 
+    }
+    #saveelement {
+      font-size: 18px;
+      margin-top: 15px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h1>Bus Counter :</h1>
+    <h2 id="countelement">0</h2>
+    <div class="buttons">
+      <button id="incrementbutton" onclick="increment()">INCREMENT</button>
+      <button id="savebutton" onclick="save()">SAVE</button>
+    </div>
+    <p id="saveelement">Previous entries: </p>
+  </div>
+<script>
+    let countelement1 = document.getElementById("countelement");
+    let saveelement = document.getElementById("saveelement");
+    let count = 0;
+ function increment() {
+      count += 1;
+      countelement1.innerText = count;
+    }
+function save() {
+      let countpage = count + " - ";
+      saveelement.innerText += countpage;
+      count = 0;
+      countelement1.innerText = 0;
+    }
+  </script>
+</body>
+</html>
